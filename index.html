@@ -1,0 +1,448 @@
+
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Inat TV İzle: Android, Telefon ve TV için Kullanım Rehberi</title>
+
+  <meta name="description" content="Inat TV izle araması yapanlar için Android cihazlarda erişim, uyumluluk, bağlantı sorunları, gizlilik ve güvenli kullanım hakkında kapsamlı rehber.">
+
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#10112b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Inat TV İzle: Android, Telefon ve TV için Kullanım Rehberi">
+  <meta property="og:description" content="Inat TV hakkında cihaz uyumluluğu, bağlantı kontrolleri ve güvenli kullanım rehberi.">
+  <meta property="og:image" content="logo.webp">
+
+  <style>
+    :root {
+      --bg: #0b1024;
+      --panel: #141b38;
+      --text: #f4f5ff;
+      --muted: #c2c7df;
+      --accent: #ff7418;
+      --accent2: #9b5cff;
+      --line: rgba(255,255,255,.12);
+      --max: 1060px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 0%, #39206a 0, transparent 32rem),
+        linear-gradient(180deg, #0b1024, #10152e 55%, #0b1024);
+      font: 16px/1.75 system-ui, sans-serif;
+    }
+
+    a {
+      color: #ffb16f;
+      text-underline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header { padding: 28px 0 18px; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 1px solid rgba(164,112,255,.55);
+      border-radius: 20px;
+      background: rgba(12,16,39,.72);
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .brand-sub { color: var(--muted); }
+
+    .hero { padding: 46px 0 36px; }
+
+    .eyebrow {
+      color: #ffad66;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 12px 0 18px;
+      font-size: clamp(2.15rem, 6vw, 4.2rem);
+      line-height: 1.08;
+    }
+
+    h1 span { color: #ff8b32; }
+
+    .intro {
+      max-width: 790px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      border: 1px solid rgba(160,110,255,.5);
+      background: rgba(105,64,177,.18);
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: #e8dcff;
+    }
+
+    main { padding-bottom: 54px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 280px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    article, aside, .notice {
+      background: rgba(20,27,56,.92);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    article { padding: 35px; }
+
+    aside {
+      padding: 22px;
+      position: sticky;
+      top: 18px;
+    }
+
+    h2 {
+      margin: 38px 0 12px;
+      font-size: 1.8rem;
+      line-height: 1.25;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    h3 { margin: 24px 0 8px; }
+
+    p { color: #e1e4f4; }
+
+    li {
+      margin: 7px 0;
+      color: #e1e4f4;
+    }
+
+    .toc-title {
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: #d8c6ff;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .notice {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255,116,24,.08);
+    }
+
+    .notice strong { color: #ffbd87; }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 2px 0 14px 48px;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+    }
+
+    .cta {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(120deg,#44247b,#9a3d67 65%,#e66b25);
+    }
+
+    .cta h2 { margin: 0 0 8px; }
+
+    .cta-link {
+      display: inline-block;
+      padding: 10px 17px;
+      border-radius: 999px;
+      background: white;
+      color: #201331;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 38px;
+      color: #aeb5d2;
+    }
+
+    @media(max-width:800px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; order: -1; }
+      .brand img { width: 62px; height: 62px; }
+      .hero { padding-top: 34px; }
+      article { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <img src="logo.webp" alt="Inat Box TV maskot logosu">
+    <div>
+      <div class="brand-name">INAT TV REHBERİ</div>
+      <div class="brand-sub">
+        Android, telefon ve televizyon rehberi
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="eyebrow">Dijital yayın ve Android rehberi</div>
+
+  <h1>Inat TV <span>İzle</span>: Telefon ve TV Kullanım Rehberi</h1>
+
+  <p class="intro">
+    Inat TV izle araması yapan kullanıcılar genellikle uygulamaya
+    erişim, Android cihaz uyumluluğu, televizyon kullanımı ve
+    bağlantı sorunları hakkında bilgi arar. Bu rehber, bir yayın
+    uygulamasını kullanmadan önce kontrol edilmesi gereken temel
+    noktaları ve güvenli kullanım alışkanlıklarını bir araya getirir.
+  </p>
+
+  <div class="chips">
+    <span class="chip">Android ve telefon</span>
+    <span class="chip">TV uyumluluğu</span>
+    <span class="chip">Bağlantı kontrolleri</span>
+    <span class="chip">Güvenli kullanım</span>
+  </div>
+</section>
+
+<main class="wrap">
+<div class="layout">
+
+<article>
+
+<section id="baslangic">
+<h2>Inat TV izle arayanlar ne bilmeli?</h2>
+
+<p>
+Mobil cihazlardan veya televizyonlardan dijital yayın izlemek
+isteyen kişiler, öncelikle kullandıkları uygulamanın kaynağını
+ve sunduğu erişim koşullarını incelemelidir. Uygulama adıyla
+yapılan aramalarda farklı indirme sayfaları, eski sürüm
+açıklamaları veya resmi olmayan kopyalar görülebilir.
+</p>
+
+<p>
+Inat TV hakkında bilgi ararken güncel açıklamaları, cihaz
+gereksinimlerini ve kullanım şartlarını birlikte değerlendirin.
+Uygulama sürümleri ve desteklenen cihazlar zamanla değişebilir.
+</p>
+</section>
+
+<section id="cihaz">
+<h2>Telefon ve Android cihazlarda izleme deneyimi</h2>
+
+<p>
+Telefon üzerinden yayın izleme deneyimini etkileyen başlıca
+unsurlar internet bağlantısının kararlılığı, cihazın performansı,
+ekran çözünürlüğü ve uygulamanın Android sürümüyle uyumudur.
+</p>
+
+<ul>
+<li>Android işletim sistemini güncel tutun.</li>
+<li>Wi-Fi veya mobil veri bağlantısını kontrol edin.</li>
+<li>Cihazda yeterli boş depolama alanı bırakın.</li>
+<li>Uygulama izinlerini dikkatle inceleyin.</li>
+</ul>
+</section>
+
+<section id="tv">
+<h2>Televizyonda kullanım öncesi dikkat edilecekler</h2>
+
+<p>
+Android TV veya TV kutusu gibi cihazlarda uygulama uyumluluğu
+modele ve işletim sistemi sürümüne göre değişebilir. Kurulumdan
+önce geliştiricinin belirttiği cihaz gereksinimlerini kontrol edin.
+</p>
+
+<h3>Ekran ve kumanda uyumluluğu</h3>
+
+<p>
+Menüler uzaktan kumandayla seçilemiyor veya yazılar ekranda
+düzgün görünmüyorsa uygulamanın TV arayüzü desteği olmayabilir.
+</p>
+</section>
+
+<section id="baglanti">
+<h2>Yayın veya bağlantı sorunu yaşanırsa</h2>
+
+<p>
+Görüntünün başlamaması, sürekli yükleme ekranı veya beklenmedik
+kapanma gibi sorunlar farklı nedenlerden kaynaklanabilir.
+</p>
+
+<ol class="steps">
+<li><strong>Bağlantıyı test edin.</strong> İnternet bağlantınızı kontrol edin.</li>
+<li><strong>Uygulamayı yeniden başlatın.</strong> Gerekirse cihazı yeniden başlatın.</li>
+<li><strong>Güncellemeleri inceleyin.</strong> Güvenilir kaynakları kullanın.</li>
+<li><strong>Depolama alanını kontrol edin.</strong> Yeterli boş alan bırakın.</li>
+<li><strong>Hata mesajını not edin.</strong> Hata kodunu araştırın.</li>
+</ol>
+</section>
+
+<section id="guvenlik">
+<h2>Güvenli erişim ve gizlilik önerileri</h2>
+
+<p>
+Resmi uygulama mağazası dışından APK yüklemek ek riskler
+doğurabilir. Dosyanın kaynağını doğrulamadan yükleme yapmayın;
+güvenlik taramasını atlamayın ve uygulamanın istediği izinleri
+dikkatle okuyun.
+</p>
+
+<ul>
+<li>İndirme sayfasının güvenilirliğini araştırın.</li>
+<li>Dosyayı mobil güvenlik çözümüyle tarayın.</li>
+<li>Gereksiz izinleri vermeyin.</li>
+<li>İşletim sisteminizi güncel tutun.</li>
+</ul>
+
+<div class="notice">
+<strong>Güvenlik notu:</strong>
+Kaynağı doğrulanamayan kurulum dosyalarını kullanmayın.
+</div>
+</section>
+
+<section id="yasal">
+<h2>Yayın içerikleri ve yasal kullanım</h2>
+
+<p>
+Dijital yayınların kullanımında telif hakları, yayın lisansları
+ve bölgesel erişim koşulları önemlidir. Bir uygulamanın
+kurulabilmesi, uygulama üzerinden sunulan tüm içeriklerin
+her ülkede serbestçe izlenebileceği anlamına gelmez.
+</p>
+
+<p>
+İçeriklere erişmeden önce hak sahiplerinin koşullarını ve
+bulunduğunuz yerde geçerli mevzuatı kontrol edin.
+</p>
+</section>
+
+<section id="sonuc">
+<h2>Sonuç: Bilinçli ve güvenli izleme</h2>
+
+<p>
+Inat TV izle konusunda araştırma yaparken cihaz uyumluluğu,
+internet bağlantısı, uygulama kaynağı ve içerik kullanım
+koşullarını birlikte değerlendirin.
+</p>
+
+<div class="cta">
+<h2>Inat TV hakkında daha fazla bilgi</h2>
+
+<p>
+Inat TV ve Android uygulama rehberleriyle ilgili ek
+açıklamalar için aşağıdaki kaynağı inceleyebilirsiniz.
+</p>
+
+<!-- Your single dofollow backlink -->
+<a class="cta-link" href="https://inatboxs.net.tr/">inat tv izle</a>
+
+</div>
+</section>
+
+</article>
+
+<aside>
+<div class="toc-title">Rehber içeriği</div>
+
+<nav class="toc" aria-label="İçindekiler">
+<a href="#baslangic">Inat TV hakkında</a>
+<a href="#cihaz">Android ve telefon</a>
+<a href="#tv">Televizyonda kullanım</a>
+<a href="#baglanti">Bağlantı sorunları</a>
+<a href="#guvenlik">Güvenlik ve gizlilik</a>
+<a href="#yasal">Yasal kullanım</a>
+<a href="#sonuc">Sonuç</a>
+</nav>
+
+<div class="notice">
+<strong>Hatırlatma</strong>
+<p>
+Yalnızca kaynağını doğrulayabildiğiniz uygulamaları kullanın
+ve içerik haklarına saygı gösterin.
+</p>
+</div>
+</aside>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<p>© 2026 Inat Box Rehber. Bu içerik genel bilgilendirme amacıyla hazırlanmıştır.</p>
+</div>
+</footer>
+
+</body>
+</html>
